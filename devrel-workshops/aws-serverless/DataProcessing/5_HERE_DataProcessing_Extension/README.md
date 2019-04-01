@@ -177,7 +177,7 @@ Use the IAM console to create a new role. Name it "WildRydesStreamProcessorRole_
 
 1. Click Action, begin typing BatchWriteItem in Filter actions, and tick the BatchWriteItem checkbox.
 
-1. 5.	Click Resources, click Add ARN in table, and construct the ARN of the DynamoDB table you created in the previous section by specifying the Region, Account, and Table Name. 
+1. Click Resources, click Add ARN in table, and construct the ARN of the DynamoDB table you created in the previous section by specifying the Region, Account, and Table Name. 
 In Region, enter the AWS Region in which you have created the DynamoDB table in the previous section, e.g.: us-east-1. In Account, enter your AWS Account ID which is a twelve-digit number, e.g.: 123456789012. To find your AWS account ID number in the AWS Management Console, click on Support in the navigation bar in the upper-right, and then click Support Center. Your currently signed in account ID appears in the upper-right corner below the Support menu.
 
 
@@ -243,7 +243,7 @@ We will create a Lambda function called WildRydesStreamProcessor_Location that w
 
    https://github.com/heremaps/devrel-workshops/blob/master/aws-serverless/DataProcessing/5_HERE_DataProcessing_Extension/Kineses2DynamoDB/index.js
 
-1. 10.	In your new code find the “FunctionName” variable and paste the function name which you copied in Step-1.
+1. In your new code find the “FunctionName” variable and paste the function name which you copied in Step-1.
 
           Eg:- FunctionName: ‘serverlessrepo-Geocode-GeocodeFunction-8UY78GHJIUGYT’
 
