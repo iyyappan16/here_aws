@@ -10,7 +10,7 @@ After completion of the previous modules (1-4), you should now be able to select
 
 In this module we are going to add the ability to set a drop off location for the Unicorn and draw the Route map (Directions). This route map will span the pickup location to the drop off location of the Unicorn. For this, we are using the HERE Routing Serverless function (available on the AWS SAR). You will learn how to deploy and use AWS SAR Functions and how to use the location services of HERE.
 
-![Restful-api architecture](../web-application/Routing_images/restful-api-architecture2.jpg)
+![Restful-api architecture](../6_HERE_Lambda_Extension/Routing_images/restful-api-architecture2.jpg)
 
 The diagram above shows how the SAR function is deployed and integrates with the Amazon API Gateway component. This module integrates with the existing resources you built in the previous modules. 
 
@@ -42,7 +42,7 @@ https://serverlessrepo.aws.amazon.com/applications/arn:aws:serverlessrepo:us-eas
 1. Click on below URL link, it leads to AWS Routing SAR function 
      https://serverlessrepo.aws.amazon.com/applications/arn:aws:serverlessrepo:us-east-1:760301537001:applications~Routing
      
-     ![Deploy SAR Screenshot](../web-application/Routing_images/rotingdeploy.PNG)
+     ![Deploy SAR Screenshot](../6_HERE_Lambda_Extension/Routing_images/rotingdeploy.PNG)
 
 1. For deployment of this function you need to have HERE Account, so first sign up for HERE account
 
@@ -50,7 +50,7 @@ https://serverlessrepo.aws.amazon.com/applications/arn:aws:serverlessrepo:us-eas
      https://aws.amazon.com/marketplace/pp/B07JPLG9SR/?ref=_ptnr_aws_sar
      
 
-     ![Deploy SAR Screenshot](../web-application/Routing_images/Here_Credentials_0.png)
+     ![Deploy SAR Screenshot](../6_HERE_Lambda_Extension/Routing_images/Here_Credentials_0.png)
      
 1. Provide your basic details and Register for your HERE account
 
@@ -58,7 +58,7 @@ https://serverlessrepo.aws.amazon.com/applications/arn:aws:serverlessrepo:us-eas
 
 1. Once complete you should see a screen like this containing your app_id & app_code.
 
-   ![Deploy SAR Screenshot](../web-application/Routing_images/Here_Credentials_3.png)
+   ![Deploy SAR Screenshot](../6_HERE_Lambda_Extension/Routing_images/Here_Credentials_3.png)
 
 1. Save your HERE Location Services API app_id & app_code. Next, we will use this credentials to deploy the function.
 
@@ -68,7 +68,7 @@ https://serverlessrepo.aws.amazon.com/applications/arn:aws:serverlessrepo:us-eas
 
 4. On the next page, find the Application settings in the bottom right corner of the page.
 
-     ![Deploy SAR Screenshot](../web-application/Routing_images/RoutingFunctionDeploy2.png)
+     ![Deploy SAR Screenshot](../6_HERE_Lambda_Extension/Routing_images/RoutingFunctionDeploy2.png)
 
 5. Preferably use the Default Application name. 
 
@@ -78,7 +78,7 @@ https://serverlessrepo.aws.amazon.com/applications/arn:aws:serverlessrepo:us-eas
 
 8. It may take few minutes of your time to create and deploy the function, once it’s deployed successfully you will get a message ‘Your application has been deployed’.
 
-     ![Deploy SAR Screenshot](../web-application/Routing_images/RoutingFunctionDeploy3.png)
+     ![Deploy SAR Screenshot](../6_HERE_Lambda_Extension/Routing_images/RoutingFunctionDeploy3.png)
 
 9. Once you see a success message, click on the “Test app” button, it will open your Lambda function which you have deployed..
 
@@ -86,7 +86,7 @@ https://serverlessrepo.aws.amazon.com/applications/arn:aws:serverlessrepo:us-eas
 
 1. Note down the complete API endpoint to configure with your bucket.
 
-     ![Deploy SAR Screenshot](../web-application/Routing_images/RoutingFunctionDeploy4.PNG)
+     ![Deploy SAR Screenshot](../6_HERE_Lambda_Extension/Routing_images/RoutingFunctionDeploy4.PNG)
 </p></details>
 
 ### 2. Upload content to your Website Bucket
@@ -104,13 +104,13 @@ To view the changes on your website, you need to upload the content to your S3 B
 
 1. Click the link below and download the zip file (website_files.zip) and extract it to your local machine.
 
-    https://github.com/iyyappan16/here_aws/blob/master/devrel-workshops/aws-serverless/web-application/website_files.zip
+    https://github.com/heremaps/devrel-workshops/blob/master/aws-serverless/web-application/6_HERE_Lambda_Extension/website_files.zip
      
 2. Browse to the directory where you saved the files locally which you have downloaded in previous step. Open the file “ride.js” with any text editor. 
 
 3. Find the function “handleViewRoute” in ride.js code, In ajax URL enter/paste the API endpoint which you have noted in step-2
 
-     ![Deploy SAR Screenshot](../web-application/Routing_images/RoutingFunctionDeploy6.png)
+     ![Deploy SAR Screenshot](../6_HERE_Lambda_Extension/Routing_images/RoutingFunctionDeploy6.png)
 
 1. Save the file.
 
@@ -122,7 +122,7 @@ To view the changes on your website, you need to upload the content to your S3 B
 
 1. Go back to the S3 bucket main overview tab, click on upload button and now click on “Add files” browse to the directory where you saved the files locally which you have downloaded in previous step select ‘ride.html’ file and upload
           
-     ![Deploy SAR Screenshot](../web-application/Routing_images/RoutingFunctionDeploy7.png)
+     ![Deploy SAR Screenshot](../6_HERE_Lambda_Extension/Routing_images/RoutingFunctionDeploy7.png)
      
 
      **File List:**
@@ -151,7 +151,7 @@ After completing all the above implementation steps, you should be able to acces
 
 1. You should be able to see "set drop" button on the right-side corner.
 
-     ![Deploy SAR Screenshot](../web-application/Routing_images/RoutingFunctionDeploy8.png)
+     ![Deploy SAR Screenshot](../6_HERE_Lambda_Extension/Routing_images/RoutingFunctionDeploy8.png)
 
 1. After the map has loaded, click anywhere on the map to set a pickup location. 
 
@@ -161,9 +161,9 @@ After completing all the above implementation steps, you should be able to acces
 
 1. Now it should automatically load the map and show the route map from the Pickup Point to the Drop Point
 
-     ![Deploy SAR Screenshot](../web-application/Routing_images/RoutingFunctionDeploy9.png)
+     ![Deploy SAR Screenshot](../6_HERE_Lambda_Extension/Routing_images/RoutingFunctionDeploy9.png)
      
-     ![Deploy SAR Screenshot](../web-application/Routing_images/RoutingFunctionDeploy10.png)
+     ![Deploy SAR Screenshot](../6_HERE_Lambda_Extension/Routing_images/RoutingFunctionDeploy10.png)
 
 1. Congratulations, you have completed the **Location Services with AWS Lambda for Web Applications module!**.
 
