@@ -158,7 +158,7 @@ We need to create a Dynamo DB table to store the WildRydes Kinesis stream data a
 
 1. Leave the Use default settings box checked and choose Create.
 
-      ![Deploy SAR Screenshot](../5_HERE_DataProcessing_Extension/Geocode_images/Geocode3.png)
+     ![Deploy SAR Screenshot](../5_HERE_DataProcessing_Extension/Geocode_images/Geocode3.png)
      
 </p></details>
 
@@ -289,7 +289,6 @@ As we saw earlier, WildRydes Kinesis Data stream will have the scheme without Ad
 
     ![Deploy SAR Screenshot](../5_HERE_DataProcessing_Extension/Geocode_images/Geocode11.png)
 
-
 1. Click on the Monitoring tab and explore the metrics available to monitor the function. Click on Jump to Logs to explore the function’s log output.
 
 ## Query the DynamoDB table
@@ -305,8 +304,6 @@ As we saw earlier, WildRydes Kinesis Data stream will have the scheme without Ad
 
      ![Deploy SAR Screenshot](../5_HERE_DataProcessing_Extension/Geocode_images/Geocode12.png)
      
-   
-
 1. Congratulations, you have completed the **Stream Processing with HERE Location Services Module!**.
 
 </p>
