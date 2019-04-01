@@ -36,7 +36,7 @@ In this step you are going to deploy the HERE Geocode function using the AWS con
 1. Click on below URL link, it leads to AWS Geocode SAR function 
 [https://serverlessrepo.aws.amazon.com/applications/arn:aws:serverlessrepo:us-east-1:760301537001:applications~Geocode](https://serverlessrepo.aws.amazon.com/applications/arn:aws:serverlessrepo:us-east-1:760301537001:applications~Geocode)
      
-     ![Deploy SAR Screenshot](../real-time-data-streams/Geocode_images/geocode.PNG)
+     ![Deploy SAR Screenshot](../5_HERE_DataProcessing_Extension/Geocode_images/geocode.PNG)
      
 1. For deployment of this function you need to have HERE Account, so first sign up for HERE account
 
@@ -56,7 +56,7 @@ In this step you are going to deploy the HERE Geocode function using the AWS con
         
 1. When the credentials have been created the portal will look like this
 
-    ![Here Account Screenshot](../real-time-data-streams/Geocode_images/Here_Credentials_3.png)
+    ![Here Account Screenshot](../5_HERE_DataProcessing_Extension/Geocode_images/Here_Credentials_3.png)
 
 1. Save your HERE Location Services API **app_id & app_code** and to use in the AWS Lambda function.
 
@@ -66,7 +66,7 @@ In this step you are going to deploy the HERE Geocode function using the AWS con
 
 4. In the next page, find the Application settings on the bottom right corner of the page.
 
-     ![Deploy SAR Screenshot](../real-time-data-streams/Geocode_images/Geocode2.png)
+     ![Deploy SAR Screenshot](../5_HERE_DataProcessing_Extension/Geocode_images/Geocode2.png)
 
 5. Use the Default Application name.
 
@@ -79,17 +79,17 @@ In this step you are going to deploy the HERE Geocode function using the AWS con
      
 9. After success message, click on “Test app” button.
 
-  	![Deploy SAR Screenshot](../real-time-data-streams/Geocode_images/test0.PNG)
+  	![Deploy SAR Screenshot](../5_HERE_DataProcessing_Extension/Geocode_images/test0.PNG)
 
 1. In next page find “Resources” tab at the bottom of the page. Click on “GeocodeFunction”.
 
 1. Copy the function name from this page for later use (Step-5), function name looks like “serverlessrepo-Geocode-GeocodeFunction-E8ODE3KJNEROF“
 
-	![Deploy SAR Screenshot](../real-time-data-streams/Geocode_images/test_app1.PNG)
+	![Deploy SAR Screenshot](../5_HERE_DataProcessing_Extension/Geocode_images/test_app1.PNG)
 
 1. Scroll down the page to “Function code” section, In the text editor you need to replace the existing code in ‘geocode.js’ with the code available at the below URL.
 
-     https://github.com/heremaps/devrel-workshops/blob/master/aws-serverless/real-time-data-streams/ReverseGeoCode/index.js
+     https://github.com/heremaps/devrel-workshops/blob/master/aws-serverless/DataProcessing/5_HERE_DataProcessing_Extension/ReverseGeoCode/index.js
      
 </p></details>
 
@@ -102,7 +102,7 @@ You can test the Geocode function that you deployed in the AWS Lambda console
 
 1. From the main AWS Lambda console screen of your function, select “Configure Test Event” from the dropdown menu and select “Test Event” dropdown.
 
-	![Deploy SAR Screenshot](../real-time-data-streams/Geocode_images/test.PNG)
+	![Deploy SAR Screenshot](../5_HERE_DataProcessing_Extension/Geocode_images/test.PNG)
 
 1. Ensure that “Create New Test Event” is selected.
 
@@ -135,7 +135,7 @@ You can test the Geocode function that you deployed in the AWS Lambda console
 
 5. Verify that the execution succeeded and that the function result with " Status code:200 "  
 
-	![Deploy SAR Screenshot](../real-time-data-streams/Geocode_images/test1.PNG)
+	![Deploy SAR Screenshot](../5_HERE_DataProcessing_Extension/Geocode_images/test1.PNG)
 
 </p></details>
 
@@ -158,7 +158,7 @@ We need to create a Dynamo DB table to store the WildRydes Kinesis stream data a
 
 1. Leave the Use default settings box checked and choose Create.
 
-      ![Deploy SAR Screenshot](../real-time-data-streams/Geocode_images/Geocode3.png)
+      ![Deploy SAR Screenshot](../5_HERE_DataProcessing_Extension/Geocode_images/Geocode3.png)
      
 </p></details>
 
@@ -183,7 +183,7 @@ In Region, enter the AWS Region in which you have created the DynamoDB table in 
 
 1. In Table Name, enter UnicornLocation and you should see your ARN in the Specify ARN for table field and it should look similar to:
 
-      ![Deploy SAR Screenshot](../real-time-data-streams/Geocode_images/Geocode4.png)
+      ![Deploy SAR Screenshot](../5_HERE_DataProcessing_Extension/Geocode_images/Geocode4.png)
       
 1. Click Add.
 
@@ -216,7 +216,7 @@ In Region, enter the AWS Region in which you have created the DynamoDB table in 
 
 ### 5. Create an IAM role for your Lambda function
 
-We will create a Lambda function called WildRydesStreamProcessor_Location that will be triggered whenever a new record is available in the WildRydes stream. Use the provided [index.js](https://github.com/heremaps/devrel-workshops/blob/master/aws-serverless/real-time-data-streams/Kineses2DynamoDB/index.js) implementation for your function code. Create an environment variable with the key TABLE_NAME and the value UnicornLocation. Configure the function to use the WildRydesStreamProcessor_Location role created in the previous section
+We will create a Lambda function called WildRydesStreamProcessor_Location that will be triggered whenever a new record is available in the WildRydes stream. Use the provided [index.js](https://github.com/heremaps/devrel-workshops/blob/master/aws-serverless/DataProcessing/5_HERE_DataProcessing_Extension/Kineses2DynamoDB/index.js) implementation for your function code. Create an environment variable with the key TABLE_NAME and the value UnicornLocation. Configure the function to use the WildRydesStreamProcessor_Location role created in the previous section
 
 <details>
 <summary><strong>Step-by-step instructions (expand for details)</strong></summary><p>
@@ -229,7 +229,7 @@ We will create a Lambda function called WildRydesStreamProcessor_Location that w
 
 1. Select WildRydesStreamProcessorRole_Location from the Existing role dropdown.
 
-      ![Deploy SAR Screenshot](../real-time-data-streams/Geocode_images/Geocode5.png)
+      ![Deploy SAR Screenshot](../5_HERE_DataProcessing_Extension/Geocode_images/Geocode5.png)
 
 1. Click Create function.
 
@@ -241,7 +241,7 @@ We will create a Lambda function called WildRydesStreamProcessor_Location that w
 
 1. Copy and paste the JavaScript code from the below URL into the code editor.
 
-   https://github.com/heremaps/devrel-workshops/blob/master/aws-serverless/real-time-data-streams/Kineses2DynamoDB/index.js
+   https://github.com/heremaps/devrel-workshops/blob/master/aws-serverless/DataProcessing/5_HERE_DataProcessing_Extension/Kineses2DynamoDB/index.js
 
 1. 10.	In your new code find the “FunctionName” variable and paste the function name which you copied in Step-1.
 
@@ -251,11 +251,11 @@ We will create a Lambda function called WildRydesStreamProcessor_Location that w
 
 1. In the Basic settings section. Set the Timeout to 1 minute.
 
-      ![Deploy SAR Screenshot](../real-time-data-streams/Geocode_images/Geocode6.png)
+      ![Deploy SAR Screenshot](../5_HERE_DataProcessing_Extension/Geocode_images/Geocode6.png)
       
 1. Scroll up and select Kinesis from the Designer section.
 
-      ![Deploy SAR Screenshot](../real-time-data-streams/Geocode_images/Geocode7.png)
+      ![Deploy SAR Screenshot](../5_HERE_DataProcessing_Extension/Geocode_images/Geocode7.png)
 
 1. In the Configure triggers section, select 'wildrydes' from Kinesis Stream.
 
@@ -267,7 +267,7 @@ We will create a Lambda function called WildRydesStreamProcessor_Location that w
 
 1. Click Save.
 
-      ![Deploy SAR Screenshot](../real-time-data-streams/Geocode_images/Geocode8.png)
+      ![Deploy SAR Screenshot](../5_HERE_DataProcessing_Extension/Geocode_images/Geocode8.png)
     
 </p></details>
 
@@ -275,11 +275,11 @@ We will create a Lambda function called WildRydesStreamProcessor_Location that w
 
 Verify that the trigger is properly executing the Lambda function. View the metrics emitted by the function and inspect the output from the Lambda function. Initially Dynamo DB will contain only the Name and StatusTime field in the Table.
 
-  ![Deploy SAR Screenshot](../real-time-data-streams/Geocode_images/Geocode9.png)
+  ![Deploy SAR Screenshot](../5_HERE_DataProcessing_Extension/Geocode_images/Geocode9.png)
 
 As we saw earlier, WildRydes Kinesis Data stream will have the scheme without Address Column. (Which you created in the Module-2). Ensure that the default schema includes:
 
-  ![Deploy SAR Screenshot](../real-time-data-streams/Geocode_images/Geocode10.png)
+  ![Deploy SAR Screenshot](../5_HERE_DataProcessing_Extension/Geocode_images/Geocode10.png)
 
 <p>
      
@@ -287,7 +287,7 @@ As we saw earlier, WildRydes Kinesis Data stream will have the scheme without Ad
 
           ./producer -name Rocinante
 
-    ![Deploy SAR Screenshot](../real-time-data-streams/Geocode_images/Geocode11.png)
+    ![Deploy SAR Screenshot](../5_HERE_DataProcessing_Extension/Geocode_images/Geocode11.png)
 
 
 1. Click on the Monitoring tab and explore the metrics available to monitor the function. Click on Jump to Logs to explore the function’s log output.
@@ -303,7 +303,7 @@ As we saw earlier, WildRydes Kinesis Data stream will have the scheme without Ad
 
 1. Click on the Items tab. Here you should see each per-minute data point for each Unicorn for which you’re running a producer.
 
-     ![Deploy SAR Screenshot](../real-time-data-streams/Geocode_images/Geocode12.png)
+     ![Deploy SAR Screenshot](../5_HERE_DataProcessing_Extension/Geocode_images/Geocode12.png)
      
    
 
