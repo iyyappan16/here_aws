@@ -44,7 +44,7 @@ In this step you are going to deploy the HERE Geocode function using the AWS con
 
 	https://aws.amazon.com/marketplace/pp/B07JPLG9SR/?ref=_ptnr_aws_sar
 	
-	 ![Here Account Subscribe](../../5_HERE_DataProcessing_Extension/Geocode_images/Here_Credentials_0.png)
+	 ![Here Account Subscribe](../5_HERE_DataProcessing_Extension/Geocode_images/Here_Credentials_0.png)
 
 1. Click the **“Continue to Subscribe”** button in the top-right corner of the page.
 
