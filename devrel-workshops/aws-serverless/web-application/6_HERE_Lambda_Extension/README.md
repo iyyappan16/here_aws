@@ -60,7 +60,7 @@ https://serverlessrepo.aws.amazon.com/applications/arn:aws:serverlessrepo:us-eas
 
    ![Deploy SAR Screenshot](../6_HERE_Lambda_Extension/Routing_images/Here_Credentials_3.png)
 
-1. Save your HERE Location Services API app_id & app_code. Next, we will use this credentials to deploy the function.
+1. Save your HERE Location Services API app_id & app_code. Next, we will use these credentials to deploy the function.
 
 1. Go back to the function deployment page.
 
@@ -70,17 +70,17 @@ https://serverlessrepo.aws.amazon.com/applications/arn:aws:serverlessrepo:us-eas
 
      ![Deploy SAR Screenshot](../6_HERE_Lambda_Extension/Routing_images/RoutingFunctionDeploy2.png)
 
-5. Preferably use the Default Application name. 
+5. Use the Default Application name.. 
 
-6. Enter your HERE app_id and app_code which you have created earlier
+6. Enter your HERE **app_id and app_code** which you created earlier
 
 7. Click “Deploy” to deploy your function.
 
-8. It may take few minutes of your time to create and deploy the function, once it’s deployed successfully you will get a message ‘Your application has been deployed’.
+8. It may take few minutes of your time to create and deploy the function, once it has been successfully deployed you will get a message ‘Your application has been deployed’.
 
      ![Deploy SAR Screenshot](../6_HERE_Lambda_Extension/Routing_images/RoutingFunctionDeploy3.png)
 
-9. Once you see a success message, click on the “Test app” button, it will open your Lambda function which you have deployed..
+9. Once you see a success message, click on the “Test app” button, it will open your Lambda function which you have deployed.
 
 1. Click on the API Gateway, to generate an endpoint to access your function.
 
@@ -108,7 +108,7 @@ To view the changes on your website, you need to upload the content to your S3 B
      
 2. Browse to the directory where you saved the files locally which you have downloaded in previous step. Open the file “ride.js” with any text editor. 
 
-3. Find the function “handleViewRoute” in ride.js code, In ajax URL enter/paste the API endpoint which you have noted in step-2
+3. Find the function “handleViewRoute” in ride.js code, in the ajax URL enter/paste the API endpoint which you have noted in step-2
 
      ![Deploy SAR Screenshot](../6_HERE_Lambda_Extension/Routing_images/RoutingFunctionDeploy6.png)
 
@@ -116,11 +116,11 @@ To view the changes on your website, you need to upload the content to your S3 B
 
 1. Go back to AWS Console -> S3 Bucket Page, here you need to upload (add/replace) 4 files Choose Upload
 
-1. In overview tab, find the ‘css’ folder and open it, click on upload button and now click on “Add files” to browse to the directory where you saved the files locally which you have downloaded in previous step select ‘routing.css’ file inside css folder and click on upload or you can drag and drop the file from the local directly.
+1. Navigate to the ‘css’ folder of your S3 Bucket and open it. Click on “upload” button and then “Add files” to browse to the directory where you saved the files locally. Upload the ‘routing.css’ file found inside the “css” folder.
 
-1. Go back to the S3 bucket main overview tab, find the ‘js’ folder and open it, click on upload button and now click on “Add files” browse to the directory where you saved the files locally which you have downloaded in previous step select ‘ride.js’ & ‘map.js’ files and upload
+10.	Go back to the S3 bucket main overview tab, and navigate to the ‘js’ folder of your S3 Bucket and open it., Click on “upload” button and then “Add files” to browse to the directory where you saved the files locally. Upload the ‘ride.js’ & ‘map.js’ files inside the “js” folder.
 
-1. Go back to the S3 bucket main overview tab, click on upload button and now click on “Add files” browse to the directory where you saved the files locally which you have downloaded in previous step select ‘ride.html’ file and upload
+11.	Go back to the S3 bucket main overview tab, click on “upload” button and then “Add files” to browse to the directory where you saved the files locally. Upload the ‘ride.html’ file. 
           
      ![Deploy SAR Screenshot](../6_HERE_Lambda_Extension/Routing_images/RoutingFunctionDeploy7.png)
      
