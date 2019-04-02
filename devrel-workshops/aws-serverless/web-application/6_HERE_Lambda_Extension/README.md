@@ -54,9 +54,9 @@ https://serverlessrepo.aws.amazon.com/applications/arn:aws:serverlessrepo:us-eas
      
 1. Provide your basic details and Register for your HERE account
 
-1. After successful registration, the HERE Portal will generate your app_id and app_code. It may take few minutes to generate your credentials
+1. After successful registration, the HERE Portal will generate your **app_id and app_code**. It may take few minutes to generate your credentials
 
-1. Once complete you should see a screen like this containing your app_id & app_code.
+1. Once complete you should see a screen like this containing your **app_id & app_code**.
 
    ![Deploy SAR Screenshot](../6_HERE_Lambda_Extension/Routing_images/Here_Credentials_3.png)
 
@@ -70,9 +70,9 @@ https://serverlessrepo.aws.amazon.com/applications/arn:aws:serverlessrepo:us-eas
 
      ![Deploy SAR Screenshot](../6_HERE_Lambda_Extension/Routing_images/RoutingFunctionDeploy2.png)
 
-5. Use the Default Application name.. 
+5. Use the Default Application name.
 
-6. Enter your HERE **app_id and app_code** which you created earlier
+6. Enter your HERE **app_id and app_code** which you created earlier.
 
 7. Click “Deploy” to deploy your function.
 
