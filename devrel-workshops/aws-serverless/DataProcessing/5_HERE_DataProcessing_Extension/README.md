@@ -53,7 +53,7 @@ In this step you are going to deploy the HERE Geocode function using the AWS con
 
 1. After successful registration, the HERE portal will generate your **app_id and app_code**. It may take few minutes to generate credentials.
         
-1. 8.	When the credentials have been created the portal will look like this
+1. When the credentials have been created the portal will look like this
 
     ![Here Account Screenshot](../5_HERE_DataProcessing_Extension/Geocode_images/Here_Credentials_3.png)
 
