@@ -86,9 +86,8 @@ In this step you are going to deploy the HERE Geocode function using the AWS con
 
 	![Deploy SAR Screenshot](../5_HERE_DataProcessing_Extension/Geocode_images/test_app1.PNG)
 
-1. Scroll down the page to “Function code” section, In the text editor you need to replace the existing code in ‘geocode.js’ with the code available at the below URL.
-
-     https://github.com/heremaps/devrel-workshops/blob/master/aws-serverless/DataProcessing/5_HERE_DataProcessing_Extension/ReverseGeoCode/index.js
+1. Scroll down the page to “Function code” section, In the text editor you need to replace the existing code in ‘geocode.js’ with the code available at the [URL](https://github.com/heremaps/devrel-workshops/blob/master/aws-serverless/DataProcessing/5_HERE_DataProcessing_Extension/ReverseGeoCode/index.js).
+     
      
 </p></details>
 
@@ -238,9 +237,9 @@ We will create a Lambda function called WildRydesStreamProcessor_Location that w
 
 1. Scroll down to the Function code section to replace the existing code in the index.js.
 
-1. Copy and paste the JavaScript code from the below URL into the code editor.
+1. Copy and paste the JavaScript code from the below [URL](https://github.com/heremaps/devrel-workshops/blob/master/aws-serverless/DataProcessing/5_HERE_DataProcessing_Extension/Kineses2DynamoDB/index.js) into the code editor.
 
-   https://github.com/heremaps/devrel-workshops/blob/master/aws-serverless/DataProcessing/5_HERE_DataProcessing_Extension/Kineses2DynamoDB/index.js
+   
 
 1. In your new code find the “FunctionName” variable and paste the function name which you copied in Step-1.
 
