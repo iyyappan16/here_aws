@@ -102,9 +102,9 @@ To view the changes on your website, you need to upload the content to your S3 B
 
 1. Select your bucket which you have created and used in the previous modules.
 
-1. Click the link below and download the zip file (website_files.zip) and extract it to your local machine.
+1. Click the [link](https://github.com/heremaps/devrel-workshops/blob/master/aws-serverless/web-application/6_HERE_Lambda_Extension/website_files.zip) and download the zip file (website_files.zip) and extract it to your local machine.
 
-    https://github.com/heremaps/devrel-workshops/blob/master/aws-serverless/web-application/6_HERE_Lambda_Extension/website_files.zip
+    
      
 2. Browse to the directory where you saved the files locally which you have downloaded in previous step. Open the file “ride.js” with any text editor. 
 
