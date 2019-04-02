@@ -1,17 +1,16 @@
 # Module #7 Serverless Data Processing on AWS
 **Stream Processing with HERE Location Services**
 
-In this module we are going to illustrate how to use AWS services to process real-time data streams with serverless applications from the AWS Serverless Application Repository (SAR).    
+In this module we are going to illustrate how to use AWS services to process real-time data streams with serverless applications from the AWS Serverless Application Repository (SAR). We will also use HERE’s Geocode API to find the street address of each unicorn in the fleet.    
 
 ## Overview
 
 In the previous modules you have created and configured a Lambda function to read from the Amazon Kinesis stream and write records to an Amazon DynamoDB table as they arrive. This table will contain the following columns "Name, StatusTime, Distance, MinMagicPoints, MaxMagicPoints, MinHealthPoints and MaxHealthPoints".
 
-In this module, you’ll use the Amazon Kinesis stream which you have created in the previous modules to collect and store sensor data from our unicorn fleet. You will then deploy the HERE Geocode API SAR function to obtain the Address for a particular Latitude and Longitude. 
+In this module, you’ll use the Amazon Kinesis stream which you have created in the previous modules to collect and store sensor data from our unicorn fleet. You will then deploy the HERE Geocode API SAR function to obtain the address for a particular Latitude and Longitude.
 
 Using a Lambda function, from the Kinesis stream you will fetch the latitude and longitude of a unicorn and you will pass values to the Geocode API. The Geocode API returns with a response containing the Address for the particular Latitude & Longitude.
-
-Finally, you will persist the response using an Amazon DynamoDB table. This table will contain the following columns "Name, StatusTime, Address, Distance, HealthPoints, Latitude, Longitude and MagicPoints". We are using HERE Geocode Serverless function which is already available on the AWS SAR.
+Finally, you will persist the response using an Amazon DynamoDB table. This table will contain the following columns "Name, StatusTime, Address, Distance, HealthPoints, Latitude, Longitude and MagicPoints". We are using HERE’s Geocode Serverless function which is already available on the AWS SAR.
 
 In this module you will learn how to create HERE account and How to deploy the Here Geocode API SAR function.
 
@@ -27,7 +26,7 @@ To learn more see below.
 
 ### 1. Deploy the HERE Geocode Function
 
-In this step you are going to deploy the HERE Geocode function using the AWS console. Use this link to deploy  
+In this step you are going to deploy the HERE Geocode function using the AWS console. Use this link to deploy   
 [https://serverlessrepo.aws.amazon.com/applications/arn:aws:serverlessrepo:us-east-1:760301537001:applications~Geocode](https://serverlessrepo.aws.amazon.com/applications/arn:aws:serverlessrepo:us-east-1:760301537001:applications~Geocode)
 
 <details>
@@ -38,9 +37,9 @@ In this step you are going to deploy the HERE Geocode function using the AWS con
      
      ![Deploy SAR Screenshot](../5_HERE_DataProcessing_Extension/Geocode_images/geocode.PNG)
      
-1. For deployment of this function you need to have HERE Account, so first sign up for HERE account
+1. For deployment of this function you need to have HERE Account
 
-1. Sign up here
+3. Sign up for an account here
 
 	https://aws.amazon.com/marketplace/pp/B07JPLG9SR/?ref=_ptnr_aws_sar
 	
@@ -50,11 +49,11 @@ In this step you are going to deploy the HERE Geocode function using the AWS con
 
 1. On the next page you can select the subscription type
 
-1. Provide your basic details and Register HERE account.
+1. Provide your basic details and register your HERE account.
 
-1. After successful registration, the HERE portal will generate your app_id and app_code. It may take few minutes to generate credentials.
+1. After successful registration, the HERE portal will generate your **app_id and app_code**. It may take few minutes to generate credentials.
         
-1. When the credentials have been created the portal will look like this
+1. 8.	When the credentials have been created the portal will look like this
 
     ![Here Account Screenshot](../5_HERE_DataProcessing_Extension/Geocode_images/Here_Credentials_3.png)
 
@@ -70,7 +69,7 @@ In this step you are going to deploy the HERE Geocode function using the AWS con
 
 5. Use the Default Application name.
 
-6. Enter your HERE app_id and app_code which you have created earlier.
+6. Enter your HERE **app_id and app_code** which you have created earlier.
 
 7. Click “Deploy” to deploy SAR function.
 
@@ -83,7 +82,7 @@ In this step you are going to deploy the HERE Geocode function using the AWS con
 
 1. In next page find “Resources” tab at the bottom of the page. Click on “GeocodeFunction”.
 
-1. Copy the function name from this page for later use (Step-5), function name looks like “serverlessrepo-Geocode-GeocodeFunction-E8ODE3KJNEROF“
+1. Copy the function name from this page for later use (Step-5), function name looks like "serverlessrepo-Geocode-GeocodeFunction-E8ODE3KJNEROF"
 
 	![Deploy SAR Screenshot](../5_HERE_DataProcessing_Extension/Geocode_images/test_app1.PNG)
 
@@ -156,7 +155,7 @@ We need to create a Dynamo DB table to store the WildRydes Kinesis stream data a
 
 1. Tick the Add sort key checkbox. Enter StatusTime for the Sort key and select String for the key type.
 
-1. Leave the Use default settings box checked and choose Create.
+1. Leave the 'Use default settings' box checked and choose Create.
 
      ![Deploy SAR Screenshot](../5_HERE_DataProcessing_Extension/Geocode_images/Geocode3.png)
      
@@ -175,10 +174,10 @@ Use the IAM console to create a new role. Name it "WildRydesStreamProcessorRole_
 
 1. Using the Visual editor, we’re going to create an IAM policy to allow our Lambda function access to the DynamoDB table created in the previous section. To begin, click Service, begin typing DynamoDB in Find a service, and click DynamoDB.
 
-1. Click Action, begin typing BatchWriteItem in Filter actions, and tick the BatchWriteItem checkbox.
+1. Click Action, begin typing 'BatchWriteItem' in Filter actions, and tick the 'BatchWriteItem' checkbox.
 
-1. Click Resources, click Add ARN in table, and construct the ARN of the DynamoDB table you created in the previous section by specifying the Region, Account, and Table Name. 
-In Region, enter the AWS Region in which you have created the DynamoDB table in the previous section, e.g.: us-east-1. In Account, enter your AWS Account ID which is a twelve-digit number, e.g.: 123456789012. To find your AWS account ID number in the AWS Management Console, click on Support in the navigation bar in the upper-right, and then click Support Center. Your currently signed in account ID appears in the upper-right corner below the Support menu.
+1. Click Resources, click Add ARN in table, and construct the ARN of the DynamoDB table you created in the previous section by specifying the Region, Account, and Table Name. In Region, enter the AWS Region in which you have created the DynamoDB table in the previous section, e.g.: us-east-1. 
+In Account, enter your AWS Account ID which is a twelve-digit number, e.g.: 123456789012. To find your AWS account ID number in the AWS Management Console, click on Support in the navigation bar in the upper-right, and then click Support Center. Your currently signed in account ID appears in the upper-right corner below the Support menu.
 
 
 1. In Table Name, enter UnicornLocation and you should see your ARN in the Specify ARN for table field and it should look similar to:
@@ -235,7 +234,7 @@ We will create a Lambda function called WildRydesStreamProcessor_Location that w
 
 1. Scroll down to the Function code section.
 
-1. Select Node.js 6.10 from Runtime.
+1. S7.	Select Node.js 6.10 or higher  from Runtime.
 
 1. Scroll down to the Function code section to replace the existing code in the index.js.
 
