@@ -328,7 +328,7 @@ We will create a Lambda function called WildRydesStreamProcessor_Location that w
 
 1. Scroll down to the Function code section.
 
-1. Click the [URL](https://github.com/heremaps/devrel-workshops/aws-serverless/DataProcessing/5_HERE_DataProcessing_Extension/Kineses2DynamoDB/KinessesDB.zip) to download the Zip file which contains Lambda function along with dependency modules 
+1. Click the [Link/URL](https://github.com/heremaps/devrel-workshops/aws-serverless/DataProcessing/5_HERE_DataProcessing_Extension/Kineses2DynamoDB/KinessesDB.zip) to download the Zip file which contains Lambda function along with dependency modules 
 
 1. In Code entry type dropdown Upload a .ZIP file option. Browse and select to upload the zip file which we downloaded in the previous step
 
